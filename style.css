@@ -1,0 +1,338 @@
+:root {
+    --background: #0E1323;
+    --Profile: #5747EA;
+    --purpleDark: #1C204B;
+    --orange: #FF8B64;
+    --blue: #55C2E6;
+    --red: #FF5E7D;
+    --green: #4BCF82;
+    --purple: #7335D2;
+    --yellow: #F1C75B;
+    --FontColorDark: #7078C9;
+    --FontColorlight: #BBC0FF;
+    --HoverColor: #33397A;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    color: #fff;
+    height: 100%;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.container {
+    display: grid;
+    width: 1110px;
+    height: 518px;
+    gap: 30px;
+    grid-template-columns: repeat(4, 255px);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+        "profile work play study"
+        "profile exercise social selfCare";
+}
+
+div.profile {
+    background-color: var(--purpleDark);
+    background-image: none;
+    grid-area: profile;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.profile-content {
+    background-color: var(--Profile);
+    border-radius: 15px;
+    flex: 5 1 0;
+    display: flex;
+    flex-direction: column;
+    padding: 37px 32px 80px 32px;
+    margin-bottom: 26px;
+}
+
+.profile-content>img {
+    border-radius: 50%;
+    width: 78px;
+    height: 78px;
+    box-shadow: 0px 2px 5px #212121;
+}
+
+#hint {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: var(--FontColorlight);
+    margin-bottom: 3px;
+}
+
+.profile-details {
+    margin-top: auto;
+}
+
+#profile-name {
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 47px;
+}
+
+.profil-period {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.profil-period li {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 21px;
+    padding-left: 32px;
+    color: var(--FontColorDark);
+    cursor: pointer;
+    transition: color 0.3s;
+    flex: 2 1 0;
+}
+
+.profil-period li:hover {
+    color: #fff;
+}
+
+li.active {
+    color: #fff;
+}
+
+.card {
+    border-radius: 15px;
+    background: url(../img/work.png) no-repeat;
+    display: flex;
+    align-items: flex-end;
+}
+
+.work {
+    background-color: var(--orange);
+    grid-area: work;
+    background-image: url(../img/work.png);
+}
+
+.play {
+    background-color: var(--blue);
+    grid-area: play;
+    background-image: url(../img/play.png);
+}
+
+.study {
+    background-color: var(--red);
+    grid-area: study;
+    background-image: url(../img/study.png);
+}
+
+.exercise {
+    background-color: var(--green);
+    grid-area: exercise;
+    background-image: url(../img/exercise.png);
+}
+
+.social {
+    background-color: var(--purple);
+    grid-area: social;
+    background-image: url(../img/social.png);
+}
+
+.selfCare {
+    background-color: var(--yellow);
+    grid-area: selfCare;
+    background-image: url(../img/selfcare.png);
+}
+
+.card-content {
+    height: 199px;
+    background-color: var(--purpleDark);
+    border-radius: inherit;
+    flex: 1;
+    padding: 29px 30px 32px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.card-content:hover {
+    background-color: var(--HoverColor);
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-title>button {
+    background: url(../img/Shape.png) no-repeat;
+    width: 21px;
+    height: 5px;
+}
+
+.card-description {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-description>.hours {
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 66px;
+
+}
+
+card-description>.period {
+    margin-top: 8px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: var(--FontColorlight);
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 540px;
+        grid-template-columns: repeat(2, 255px);
+        grid-template-rows: repeat(4, 244px);
+        grid-template-areas:
+            "profile work"
+            "profile play "
+            "study exercise"
+            "social selfCare";
+    }
+    .attribution {
+        position: absolute;
+        bottom: -550px;
+        
+        }
+
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        width: 375px;
+        grid-template-rows: 7fr;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas:
+            "profile"
+            "work"
+            "play"
+            "study"
+            "exercise"
+            "social"
+            "selfCare";
+    }
+
+    .card-content {
+        padding: 28px 24px;
+    }
+
+    div.profile {
+        align-items: stretch;
+
+    }
+
+    .profile-content {
+        flex-direction: row;
+        padding: 35px 39px 34px 32px;
+        margin-bottom: 26px;
+        align-items: center;
+    }
+
+    .profil-period {
+        flex-direction: row;
+
+    }
+
+
+    #profile-name {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .profile-details {
+        margin: 0;
+        margin-left: 20px
+    }
+
+    .card-description .hours {
+        font-size: 32px;
+        line-height: 38px;
+
+    }
+
+    .card-content {
+        height: 122px;
+        padding: 28px 24px;
+        justify-content: space-between;
+        transition: background 0.3s;
+        cursor: pointer;
+
+    }
+
+    .card:not(.profile) {
+        height: 166px;
+    }
+
+    .card-description {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    h2 {
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    .layout {
+        margin: 32px 24px;
+        height: auto;
+    }
+    .attribution {
+        position: absolute;
+        bottom: -850px;
+        
+        }
+}
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    color: var(--FontColorlight);
+    padding: 10px;
+}
+
+.attribution a {
+    color: var(--Blue);
+}
