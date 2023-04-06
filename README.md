@@ -25,7 +25,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [time-tracking-doshboard](https://hedize.github.io/Testimonials-grid-section/)
+- Live Site URL: [time-tracking-doshboard]( https://hedize.github.io/time-tracking-doshboard/)
 
 ## My process
 
